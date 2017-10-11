@@ -14,6 +14,17 @@
         <button class="addOption">Add</button>
         <img src="http://www.sandra-svensson.se/wp-content/uploads/2016/02/Ska%CC%88rmavbild-2016-02-21-kl.-16.49.20.png" style="width:250px;height:142px";>
       </div>
+      <div class="resultSection"></div>
       <button>Go!</button>
+    <script scr="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+      $(function() {
+        $('.resultSection').hide()
+        var add_option = function() {
+          $('.inputs').append('<input></input>')
+        }
+        $('.addOption').click(add_option)
+      })
+    </script>
   </body>
 </html>
