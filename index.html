@@ -1,5 +1,5 @@
 <!doctype html>
-<html land=en>
+<html lang=""=en>
   <head>
     <meta charset="utf-8">
     <title>Carolina Osterkamp</title>
@@ -22,11 +22,17 @@
 
     <button>Go!</button>
 
-    <script scr="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
       $(function() {
-        $('.resultSection').hide()
-      } )
+        $('.resultSection').hide();
+
+          var add_option = function() {
+              $('.inputs').append('<input placeholder = "Something added"></input>');
+          }
+        $('.addOption').click(add_option);
+
+      });
     </script>
   </body>
 </html>
