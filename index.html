@@ -20,17 +20,22 @@
 
     <div class="resultSection"></div>
 
-    <button>Go!</button>
+    <button class="submit">Go!</button>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
       $(function() {
         $('.resultSection').hide();
 
-          var add_option = function() {
+        var add_option = function() {
               $('.inputs').append('<input placeholder = "Something added"></input>');
-          }
+        }
+
         $('.addOption').click(add_option);
+
+        var options = [];
+        $('.submit').click(submit)
+
 
       });
     </script>
