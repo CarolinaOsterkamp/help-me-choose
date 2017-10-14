@@ -41,8 +41,8 @@
                   options.push($(this).val() )
               });
               var winner = options[Math.floor(Math.random()*options.length)];
-              $('.resultSection').text(winner);
 
+              $('.resultSection').text(winner);
               $('.startTitle').text("The winner is:");
             };
             $('.submit').click(submit)
