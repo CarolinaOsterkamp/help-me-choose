@@ -39,7 +39,7 @@
               $('.resultSection').css('display', 'flex');
 
                   $('input').each(function () {
-                    if( $(this.val)!="") {
+                    if( $(this).val() != '') { //kollar att värdena i input är större än inget
                       options.push($(this).val() )
                     }
                   });
