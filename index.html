@@ -50,6 +50,12 @@
             };
             $('.submit').click(submit)
 
+            $('body').keypress(function(e) { // detta gör att man kan trycka enter
+              if (e.which == 13) {
+                add_option()
+              }
+  })
+
 
           });
         </script>
