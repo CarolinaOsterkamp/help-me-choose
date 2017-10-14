@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Carolina Osterkamp</title>
     <link href="./main.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <h1 class="startTitle">Help me choose between...</h1>
@@ -14,41 +15,40 @@
           <input placeholder="Something"></input>
         </div>
 
-        <button class="addOption">Add</button>
         <img src="http://www.sandra-svensson.se/wp-content/uploads/2016/02/Ska%CC%88rmavbild-2016-02-21-kl.-16.49.20.png" style="width:250px;height:142px";>
+        <button class="addOption">Add</button>
       </div>
 
     <div class="resultSection"></div>
+        <button class="submit">Go!</button>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-    <button class="submit">Go!</button>
+        <script>
+          $(function() {
+            $('.resultSection').hide();
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script>
-      $(function() {
-        $('.resultSection').hide();
+            var add_option = function() {
+                  $('.inputs').append('<input placeholder = "Something added"></input>');
+            }
 
-        var add_option = function() {
-              $('.inputs').append('<input placeholder = "Something added"></input>');
-        }
+            $('.addOption').click(add_option);
 
-        $('.addOption').click(add_option);
+            var options = [];
+            var submit = function () {
+              $('.inputSection').hide();
+              $('.resultSection').css('display', 'flex');
+              $('input').each(function () {
+                  options.push($(this).val() )
+              });
+              var winner = options[Math.floor(Math.random()*options.length)];
+              $('.resultSection').text(winner);
 
-        var options = [];
-        var submit = function () {
-          $('.inputSection').hide();
-          $('.resultSection').css('display', 'flex');
-          $('input').each(function () {
-              options.push($(this).val() )
+              $('.startTitle').text("The winner is:");
+            };
+            $('.submit').click(submit)
+
+
           });
-          var winner = options[Math.floor(Math.random()*options.length)];
-          $('.resultSection').text(winner);
-
-          $('.startTitle').text("The winner is:");
-        };
-        $('.submit').click(submit)
-
-
-      });
-    </script>
+        </script>
   </body>
 </html>
